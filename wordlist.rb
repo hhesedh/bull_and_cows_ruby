@@ -11,10 +11,14 @@ class Wordlist
   end
 
   def word_search(list, word)
-    list.index(word).nil? ? -1 : list.index(word)
+    index_list = list.index(word)
+    index_list.nil? ? -1 : index_list
   end
 
   def to_s
     @alist.join('\n')
   end
 end
+
+arquivo = Wordlist.new('palavras.txt')
+puts arquivo.word_search(arquivo.alist, 'todo')
